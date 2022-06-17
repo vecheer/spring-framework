@@ -41,6 +41,7 @@ import org.springframework.util.ResourceUtils;
  * @author Juergen Hoeller
  * @since 28.12.2003
  */
+// 实现了 Resource 接口中大部分的方法
 public abstract class AbstractResource implements Resource {
 
 	/**

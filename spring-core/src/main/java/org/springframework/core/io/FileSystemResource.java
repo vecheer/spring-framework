@@ -55,6 +55,7 @@ import org.springframework.util.StringUtils;
  * @see java.io.File
  * @see java.nio.file.Files
  */
+// 对 java.io.File 进行了封装
 public class FileSystemResource extends AbstractResource implements WritableResource {
 
 	private final String path;

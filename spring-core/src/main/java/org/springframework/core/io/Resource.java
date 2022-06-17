@@ -49,6 +49,12 @@ import org.springframework.lang.Nullable;
  * @see ByteArrayResource
  * @see InputStreamResource
  */
+
+// 资源可以是: 本地文件、网络资源等
+// Resource 统一定义了 spring 中的资源
+// 可以表示: URL路径资源、classpath资源、文件资源
+
+// 该接口中只定义了一系列方法，而其实现类 AbstractResource 实现了大部分的方法
 public interface Resource extends InputStreamSource {
 
 	/**

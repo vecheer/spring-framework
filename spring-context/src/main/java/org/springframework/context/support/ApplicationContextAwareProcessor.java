@@ -73,7 +73,9 @@ class ApplicationContextAwareProcessor implements BeanPostProcessor {
 		this.embeddedValueResolver = new EmbeddedValueResolver(applicationContext.getBeanFactory());
 	}
 
-
+	// 初始化-前置 处理器
+	//    目的是根据 bean 对 aware 接口的实现，将对应的参数赋予 bean
+	//    核心是调用 invokeAwareInterfaces 方法
 	@Override
 	@Nullable
 	public Object postProcessBeforeInitialization(final Object bean, String beanName) throws BeansException {
@@ -122,6 +124,9 @@ class ApplicationContextAwareProcessor implements BeanPostProcessor {
 		}
 	}
 
+
+	// 初始化-后置 处理器什么也没有做
+	// （aware接口回调发生在之前的：初始化-前置 处理器中）
 	@Override
 	public Object postProcessAfterInitialization(Object bean, String beanName) {
 		return bean;
